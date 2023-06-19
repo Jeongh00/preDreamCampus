@@ -1,13 +1,13 @@
-package com.dreamroad.dreamroad;
+package com.api.moduleapi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DreamroadApplication {
+public class ModuleApiApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(DreamroadApplication.class, args);
+        SpringApplication.run(ModuleApiApplication.class, args);
     }
 
 }

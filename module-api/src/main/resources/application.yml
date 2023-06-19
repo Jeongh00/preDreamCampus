@@ -1,0 +1,22 @@
+version: "3.8"
+services:
+  dream-road-redis:
+    container_name: dream-road-redis
+    build:
+      dockerfile: Dockerfile
+      context: ./redis
+    image: anjeonghoo/dream-road-redis
+    ports:
+      - "6379:6379"
+
+  dream-road-database:
+    container_name: dream-road-database
+    build:
+      dockerfile: Dockerfile
+      context: ./database
+    image: anjeonghoo/dream-road-database
+    environment:
+      - MYSQL_DATABASE=dreamroad
+      - MYSQL_ROOT_PASSWORD=1234
+    ports:
+      - "3306:3306"

@@ -1,10 +1,10 @@
-package com.dreamroad.dreamroad;
+package com.api.moduleapi;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class DreamroadApplicationTests {
+class ModuleApiApplicationTests {
 
     @Test
     void contextLoads() {
