@@ -17,6 +17,7 @@ services:
     image: anjeonghoo/dream-road-database
     environment:
       - MYSQL_DATABASE=dreamroad
-      - MYSQL_ROOT_PASSWORD=1234
+      - MYSQL_USER=dreamRoad
+      - MYSQL_PASSWORD=1234
     ports:
       - "3306:3306"

@@ -1,4 +1,5 @@
 version: "3.8"
+
 services:
   dream-road-redis:
     container_name: dream-road-redis
@@ -16,8 +17,9 @@ services:
       context: ./database
     image: anjeonghoo/dream-road-database
     environment:
-      - MYSQL_DATABASE=dreamRoad
-      - MYSQL_ROOT_PASSWORD=1234
+      - MYSQL_DATABASE=dreamroad
+      - MYSQL_USER=dreamRoad
+      - MYSQL_PASSWORD=1234
     healthcheck:
       test: [ 'CMD-SHELL', 'mysqladmin ping -h 127.0.0.1 -u dreamRoad --password=1234' ]
       interval: 10s
@@ -29,7 +31,7 @@ services:
   dream-road-app:
     container_name: dream-road-app
     build: .
-    depends_on: # DB, REDIS 컨테이너가 실행된 다음 WEB을 실행시킨다.
+    depends_on:
       - dream-road-database
       - dream-road-redis
     image: anjeonghoo/dream-road-app
@@ -38,4 +40,3 @@ services:
       - SPRING_DATASOURCE_PASSWORD=1234
     ports:
       - "80:8080"
-    restart: always
