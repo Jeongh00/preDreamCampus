@@ -4,7 +4,7 @@ plugins {
     id 'io.spring.dependency-management' version '1.0.15.RELEASE'
 }
 
-group = 'com.dreamroad'
+group = 'com.api'
 version = '0.0.1-SNAPSHOT'
 
 java {
@@ -40,6 +40,10 @@ tasks.named('test') {
     useJUnitPlatform()
 }
 
-bootJar{
-    archiveFileName = 'app.jar'
+bootJar {
+    enabled = true
+    mainClass = 'com.api.moduleapi.ModuleApiApplication'
+}
+jar {
+    enabled = false
 }
